@@ -10,7 +10,15 @@
     <!-- hyperlink -->
     <div>Microblog: <a href="/index">Home</a></div> 
     <hr>
-    <!-- the block content from index.html will be extended here -->
-    {% block content %}{% endblock %} 
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
   </body>
 </html>

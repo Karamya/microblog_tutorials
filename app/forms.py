@@ -8,5 +8,5 @@ from wtforms import StringField, BooleanField
 from wtforms.validators import DataRequired
 
 class LoginForm(Form):
-    openid = StringField('openid', validators=[DataRequired()])
+    openid = StringField('openid', validators=[DataRequired()]) #DataRequired checks that the field is not submitted empty
     remember_me = BooleanField('remember_me', default=False)
